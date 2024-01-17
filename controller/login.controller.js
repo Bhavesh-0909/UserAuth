@@ -14,7 +14,7 @@ exports.login = async(req, res) => {
             })
         }
 
-        const user = await User.findOne({email});
+        let user = await User.findOne({email});
 
         if(user){
 
@@ -58,7 +58,8 @@ exports.login = async(req, res) => {
     } catch (error) {
         res.status(500).json({
             success:false,
-            message:"Error while Signing up"
+            message:"Error while Signing up",
+            error
         })
     }
 }
