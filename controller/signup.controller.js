@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const User = require('../model/user.model');
 const bcrypt = require('bcrypt');
 
-exports.createUser = async(req, res)=>{
+exports.signup = async(req, res)=>{
 
     try {
         const {name, email, password, role} = req.body;
